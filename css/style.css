@@ -125,7 +125,7 @@ nav {
     text-align: center;
     color: var(--primary-red);
     font-family: var(--ff-abril);
-    margin: 4rem 0 4rem 0;
+    margin: 6rem 0 3rem 0;
 }
 
 .featured .container {
@@ -138,31 +138,38 @@ nav {
     text-align: center;
     border: 3px solid #fff;
     border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
 
 .card-img-container {
-    height: auto;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
 }
 
 .recipe-card img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
 .card-content {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
 
 .card-content h3,
 .card-content p {
     color: var(--dark-red-gray);
+    margin-bottom: 1rem;
 }
 
 /* Testimonials */
@@ -291,6 +298,11 @@ nav {
     letter-spacing: 1px;
 }
 
+.cta #messageContainer {
+    color: var(--light-yellow);
+    text-align: center;
+}
+
 /* Footer */
 footer {
     background-image: linear-gradient(#d48533, #a34509);
@@ -381,15 +393,14 @@ footer .copyright {
     color: var(--light-yellow);
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
 
 .recipe-hero .contributor img {
     border-radius: 50%;
-    height: 100%;
-    max-width: 8rem;
+    height: 4rem;
+    width: 4rem;
     grid-column: 1 / 2;
     display: flex;
     align-items: center;
@@ -463,9 +474,14 @@ footer .copyright {
 }
 
 .recipe-bio-img {
-    max-width: 100%;
-    height: 100%;
+    max-width: 484px;
+    height: auto;
     margin-left: auto;
+}
+
+.recipe-bio-img img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -578,6 +594,10 @@ table caption {
 }
 
 /* Directions */
+.recipe {
+    margin-bottom: 6rem;
+}
+
 .recipe .directions {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -702,6 +722,10 @@ table caption {
 
 .btn-hero {
     margin-bottom: 2.5rem;
+}
+
+.btn-recipe-card {
+    margin-top: auto;
 }
 
 .btn-convert,
@@ -865,12 +889,15 @@ table caption {
     .featured .container {
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
         gap: 1.5rem;
     }
 
     .featured .recipe-card .btn-recipe-card {
         width: 100%;
     }
+
+    /* Mobile - Testimonials */
 
     .testimonials {
         margin-bottom: 10rem;
@@ -1017,7 +1044,7 @@ table caption {
     }
     
     .recipe-hero .img-wrapper {
-        max-width: 300px;
+        max-width: 100%;
         height: 100%;
         grid-column: 1;
         grid-row: 3;
@@ -1063,7 +1090,7 @@ table caption {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 1rem;
+        margin-right: 0.875rem;
     }
     
     .recipe-hero .actions {
