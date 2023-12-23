@@ -118,10 +118,11 @@ nav {
     grid-area: header;
 }
 
-.hero p {
+.hero .hero-para {
     grid-area: subheader;
     font-family: var(--ff-abril);
     margin-bottom: 1.5rem;
+    padding: 0 4rem;
 }
 
 .hero .btn {
@@ -480,11 +481,6 @@ footer .copyright {
     margin-left: 1rem;
 }
 
-
-
-
-
-
 /* Recipe Intro */
 .recipe-intro {
     padding: 4rem 0;
@@ -511,8 +507,6 @@ footer .copyright {
     max-width: 100%;
     height: auto;
 }
-
-
 
 /* Recipe Section */
 .recipe {
@@ -646,6 +640,51 @@ table caption {
     margin-left: 1.75rem;
 }
 
+/* About Page */
+.about-header {
+    height: 650px;
+    position: relative;
+}
+
+.about-hero {
+    max-width: 1100px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    position: relative;
+    top: 55%;
+}
+
+.about-hero .img-wrapper {
+    max-width: 80%;
+    grid-column: 2 / 3;
+    margin-left: auto;
+}
+
+.about-hero .about-header-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero .about-hero-text {
+    grid-column: 1 / 2;
+}
+
+.about-hero .about-subheader {
+    color: var(--light-yellow);
+    margin-bottom: 3rem;
+}
+
+.about {
+    margin-bottom: 8rem;
+}
+
+.about-content p {
+    color: var(--dark-red-gray);
+}
+
 /* Utility Classes */
 .container {
     max-width: 1100px;
@@ -656,6 +695,7 @@ table caption {
     max-width: 900px;
     margin: 0 auto;
 }
+
 
 /* Text Classes */
 .text-xlg {
@@ -854,7 +894,8 @@ table caption {
     .testimonials h2,
     .cta h2
     .recipe-intro h2,
-    .recipe h2 {
+    .recipe h2,
+    .about-content h2 {
         font-size: 2rem;
     }
 
@@ -887,8 +928,9 @@ table caption {
         display: none;
     }
     
-    .hero p {
+    .hero .hero-para {
         margin-bottom: 1rem;
+        padding: 0;
     }
     
     .hero .btn {
@@ -930,7 +972,6 @@ table caption {
     }
 
     .testimonials h2 {
-        font-size: 2rem;
         margin-bottom: 3.5rem;
         padding: 0 1rem;
     }
@@ -1226,6 +1267,56 @@ table caption {
         margin-bottom: 0.875rem;
     }
 
+    /* Mobile About Page */
+    
+    .about-header {
+        height: auto;
+        position: relative;
+        padding-bottom: 3rem;
+    }
+    
+    .about-hero {
+        max-width: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        position: relative;
+        top: 15%;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .about-hero p {
+        text-align: center;
+    }
+    
+    .about-hero .img-wrapper {
+        max-width: 100%;
+        height: auto;
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0 auto;
+    }
+    
+    .about-hero .about-header-img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .about {
+        margin-bottom: 8rem;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        text-align: center;
+
+    }
     
 
 
