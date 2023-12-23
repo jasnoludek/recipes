@@ -63,6 +63,33 @@ nav {
     color: var(--light-yellow);
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light-yellow);
+    min-width: 200px;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-nav .desktop-menu .dropdown-content .dd-link {
+    display: block;
+    color: var(--dark-red-gray);
+    padding: 0.5rem 0.875rem;
+    border-bottom: 1.5px 50% var(--dark-red-gray);
+    transition: 0.3s ease-in-out;
+}
+
+.main-nav .desktop-menu .dropdown-content .dd-link:hover {
+    background: var(--primary-green);
+    color: var(--light-yellow);
+}
+
 .hero {
     text-align: center;
     font-family: var(--ff-abril);
@@ -118,7 +145,7 @@ nav {
 .featured {
     position: relative;
     z-index: 2;
-    padding: 200px 0 100px 0;
+    padding: 200px 0 200px 0;
 }
 
 .featured h2 {
@@ -158,7 +185,7 @@ nav {
 }
 
 .card-content {
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -210,7 +237,7 @@ nav {
 
 /* CTA */
 .cta {
-    padding: 8rem 0;
+    padding: 12rem 0;
     position: relative;
 }
 
@@ -239,7 +266,6 @@ nav {
 .cta .form-wrapper {
     margin-right: 4rem;
 }
-
 
 .cta h2 {
     line-height: 1.2;
@@ -301,6 +327,8 @@ nav {
 .cta #messageContainer {
     color: var(--light-yellow);
     text-align: center;
+    height: 2rem;
+    margin-top: 0.5rem;
 }
 
 /* Footer */
@@ -817,6 +845,7 @@ table caption {
 }
 
 @media(max-width: 53.125rem) {
+    /* Mobile Homepage */
     .container {
         margin: 0 1rem;
     }
@@ -829,6 +858,7 @@ table caption {
         font-size: 2rem;
     }
 
+    /* Mobile Navigation */
     .hamburger-button {
         display: block;
     }
@@ -846,21 +876,18 @@ table caption {
         display: none;
     }
     
+    /* Mobile Hero Section */
     .hero-container {
         max-width: 100%;
-        display: grid;
         grid-template-areas: 1fr;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
     }
     
-    .hero .circles-left {
+    .hero .circles-left,
+    .hero .circles-right {
         display: none;
     }
     
     .hero p {
-        font-family: var(--ff-abril);
         margin-bottom: 1rem;
     }
     
@@ -874,17 +901,11 @@ table caption {
         margin: 0 auto;
     }
     
-    .hero .circles-right {
-        grid-area: circles-r;
-        max-width: 100px;
-        display: none;
-    }
-
+    /* Mobile Featured Recipes */
     .featured {
         padding: 4rem 0 8rem;
         margin-top: 12rem;
     }
-    
     
     .featured .container {
         display: grid;
@@ -897,8 +918,7 @@ table caption {
         width: 100%;
     }
 
-    /* Mobile - Testimonials */
-
+    /* Mobile Testimonials */
     .testimonials {
         margin-bottom: 10rem;
     }
@@ -928,6 +948,7 @@ table caption {
         font-weight: 700;
     }
 
+    /* Mobile CTA Section */
     .cta {
         padding: 4rem 0;
         margin: 6rem 0 6rem;
@@ -949,6 +970,7 @@ table caption {
         left: 10%;
         max-width: 100%;
         height: auto;
+        align-self: center;
     }
     
     .cta .form-wrapper {
@@ -993,6 +1015,7 @@ table caption {
         display: block;
     }
 
+    /* Mobile Footer */
     footer .footer-menus {
         display: grid;
         grid-template-columns: 1fr;
@@ -1027,10 +1050,11 @@ table caption {
         font-size: 0.875rem;
     }
 
-    /* Recipe Pages */
+    /*  Mobile Recipe Page */
     .recipe-header {
-        height: 1125px;
+        height: auto;
         position: relative;
+        padding-bottom: 3rem;
     }
     
     .recipe-header .recipe-hero {
@@ -1101,6 +1125,7 @@ table caption {
         grid-row: 4;
         margin-top: 1rem;
         padding: 1rem;
+        border-bottom: 1px solid var(--light-yellow);
     }
 
     .recipe-hero .actions span {
@@ -1120,6 +1145,8 @@ table caption {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--light-yellow);
     }
     
     .recipe-hero .stats span {
