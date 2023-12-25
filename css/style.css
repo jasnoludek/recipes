@@ -90,6 +90,46 @@ nav {
     color: var(--light-yellow);
 }
 
+.main-nav .mobile-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light-yellow);
+    min-width: 200px;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.mobile-menu .dropdown-content {
+    position: absolute;
+    background-color: var(--light-yellow);
+    min-width: 200px;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;  
+    
+}
+
+#mobileRecipesDropdown {
+    display: none;
+}
+
+#mobileRecipesDropdown.show {
+    display: block;
+}
+
+.mobile-menu .dropdown-content .dd-link {
+    display: block;
+    padding: 0.5rem 0.875rem;
+}
+
+.mobile-menu .dropdown-content .dd-link:hover {
+    display: block;
+    padding: 0.5rem 0.875rem;
+    background: var(--primary-green);
+    color: var(--light-yellow);
+}
+
 .hero {
     text-align: center;
     font-family: var(--ff-abril);
@@ -369,6 +409,10 @@ footer .social {
     gap: 3rem;
 }
 
+footer .social i:hover {
+    color: var(--primary-green);
+}
+
 footer .useful-links {
     margin-left: auto;
 }
@@ -461,6 +505,11 @@ footer .copyright {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: 0.3s;
+}
+
+.recipe-hero .actions i:hover {
+    color: var(--primary-green);
 }
 
 .recipe-hero .actions i span {
@@ -840,7 +889,25 @@ table caption {
 .hamburger-button .hamburger-line {
     width: 2rem;
     height: 3px;
-    background: var(--primary-green);
+    background: var(--light-yellow);
+    margin: 6px 0;
+}
+
+/* Close Button */
+.close-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.875rem;
+    z-index: 1000;
+    margin-left: auto;
+}
+
+.hamburger-button .hamburger-line {
+    width: 2rem;
+    height: 3px;
+    background: var(--light-yellow);
     margin: 6px 0;
 }
 
@@ -902,6 +969,20 @@ table caption {
     /* Mobile Navigation */
     .hamburger-button {
         display: block;
+    }
+
+    .hamburger-button.close .hamburger-line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 7px);
+        background-color: var(--primary-green);
+    }
+
+    .hamburger-button.close .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-button.close .hamburger-line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -7px);
+        background-color: var(--primary-green);
     }
 
     .main-nav .logo {

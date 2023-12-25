@@ -7,8 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('hamburgerButton:', hamburgerButton);
   console.log('mobileMenu', mobileMenu);
 
-  hamburgerButton.addEventListener('click', () =>
-    mobileMenu.classList.toggle('active'));
+  hamburgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    hamburgerButton.classList.toggle('close');
+  });
+    
+
+  // Functionality for Recipes dropdown in mobile menu
+  document.getElementById('mobileRecipesLink').addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('Recipes link clicked')
+    const mobileRecipesDropdown = document.getElementById('mobileRecipesDropdown');
+    mobileRecipesDropdown.classList.toggle('show');
+  });
+
+  window.addEventListener('click', function (event) {
+    const mobileRecipesDropdown = document.getElementById('mobileRecipesDropdown');
+    const mobileRecipesLink = document.getElementById('mobileRecipesLink');
+    if (event.target !== mobileRecipesLink && !mobileRecipesDropdown.contains(event.target)) {
+      console.log('Clicked outside dropdown, hiding');
+      mobileRecipesDropdown.classList.remove('show');
+    }
+  });
 
   // Functionality for scroll navigation
   const heroButton = document.getElementById('heroButton');
