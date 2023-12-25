@@ -341,7 +341,6 @@ nav {
     border: 2px solid var(--primary-green);
 }
 
-
 .cta input::placeholder {
     font-size: 1rem;
     opacity: 0.4;
@@ -706,6 +705,7 @@ table caption {
 }
 
 .about-hero .img-wrapper {
+    height: 340px;
     max-width: 80%;
     grid-column: 2 / 3;
     margin-left: auto;
@@ -734,6 +734,114 @@ table caption {
     color: var(--dark-red-gray);
 }
 
+/* Contact Page */
+.contact-hero {
+    text-align: center;
+    font-family: var(--ff-abril);
+    color: var(--white);
+    position: relative;
+}
+
+.contact-hero-container {
+    display: grid;
+    grid-template-areas:
+      "circles-l header circles-r"
+      "circles-l subheader circles-r";
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-hero .circles-left {
+    grid-area: circles-l;    
+}
+
+.contact-hero .circles-right {
+    grid-area: circles-r;
+}
+
+.contact-hero h1 {
+    grid-area: header;
+}
+
+.contact-hero .hero-para {
+    grid-area: subheader;
+    font-family: var(--ff-abril);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 6rem;
+    padding: 4rem;
+    border-radius: 1rem;
+    background-color: #d48533
+}
+
+.contact-form label {
+    color: var(--light-yellow);
+}
+
+.contact-form input[type="email"] {
+    background: var(--light-yellow);
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0.8rem 2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    width: 100%;
+    outline: none;
+}
+
+.contact-form input[type="email"]:focus {
+    background: #fff;
+    border: 2px solid var(--primary-green);
+}
+
+.contact-form textarea {
+    background: var(--light-yellow);
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0.8rem 2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    width: 100%;
+    outline: none;
+}
+
+.contact-form textarea:focus {
+    background: #fff;
+    border: 2px solid var(--primary-green);
+}
+
+.contact-form input::placeholder {
+    font-size: 1rem;
+    opacity: 0.4;
+}
+
+.contact-form input:focus::placeholder {
+    color: var(--primary-green);
+    opacity: 0.8;
+}
+
+.contact-form textarea::placeholder {
+    font-size: 1rem;
+    opacity: 0.4;
+}
+
+.contact-form textarea:focus::placeholder {
+    color: var(--primary-green);
+    opacity: 0.8;
+}
+
+.contact-form #contactMessageContainer {
+    color: var(--light-yellow);
+    text-align: center;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
+
 /* Utility Classes */
 .container {
     max-width: 1100px;
@@ -744,7 +852,6 @@ table caption {
     max-width: 900px;
     margin: 0 auto;
 }
-
 
 /* Text Classes */
 .text-xlg {
@@ -1125,8 +1232,6 @@ table caption {
         position: static;
         font-size: 1rem;
         padding: 0.5rem 1.5rem;
-        border-radius: .5rem;
-        width: 100%;
     }
 
     .cta .input-box .btn {
@@ -1349,7 +1454,6 @@ table caption {
     }
 
     /* Mobile About Page */
-    
     .about-header {
         height: auto;
         position: relative;
@@ -1385,7 +1489,7 @@ table caption {
     
     .about-hero .about-header-img {
         max-width: 100%;
-        height: auto;
+        height: 215px;
         object-fit: cover;
     }
     
@@ -1396,10 +1500,59 @@ table caption {
     .about-content p {
         font-size: 1.2rem;
         text-align: center;
+    }
 
+    /* Mobile Contact Page */
+    .contact-hero-container {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "subheader";
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
     }
     
+    .contact-hero .circles-left {
+        display: none;   
+    }
+    
+    .contact-hero .circles-right {
+        display: none;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-hero-para {
+        font-size: 1.2rem;
+    }
+    
+    .contact-form {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-form label {
+        font-size: 1.2rem;
+    }
 
+    .contact-form input[type="email"] {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
 
+    .contact-form .btn {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .contact-form #contactMessageContainer {
+        color: var(--light-yellow);
+        text-align: center;
+        height: 2rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
